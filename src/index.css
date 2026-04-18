@@ -1,0 +1,36 @@
+/* Global reset and mobile polish */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #FFF8E7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent accidental text selection when kids rapid-tap */
+  -webkit-user-select: none;
+  user-select: none;
+  /* iOS standalone PWA safe areas */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+           env(safe-area-inset-bottom) env(safe-area-inset-left);
+  box-sizing: border-box;
+}
+
+/* Let the spelling test input still accept selection / cursor normally */
+input, textarea {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Prevent double-tap zoom on buttons */
+button {
+  touch-action: manipulation;
+}
+
+/* Hide iOS Safari pull-to-refresh rubber band flashing */
+body {
+  overscroll-behavior-y: contain;
+}
